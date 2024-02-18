@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <!-- Add any additional CSS or external stylesheets here -->
-</head>
+{% block head %}
+<title>Home Page</title>
+{% endblock %}
 
-<body>
-    <h1>Hello World</h1>
-    <p>Your name is {{ name }}</p>
-
-    <!-- Add any additional content or JavaScript here -->
-
-</body>
-
-</html>
+{% block body %}
+<h1></h1>
+{% if not logged_in %}
+<h1>Login <a href="/login">here</h1>
+{% else %}
+<h1>You are logged in</h1>
+{% endif %} {% endblock %}
